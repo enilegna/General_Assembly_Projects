@@ -49,19 +49,20 @@ Data Type: JPEG, JPG, PNG
 (for Kaggle submission)
 
 ## Model 
-|Model| Libraries | Kaggle Score |
-|--|--|--|
-| Resnet-18 | Pytorch |90.4%
+|Model| Libraries | Train Score | Test Score |
+|--|--|--|--|
+| Resnet-18 | Pytorch |98.3% | 97.6% |
+| EffecientNet| Keras |97.0% | 96.1% |
 
 
 Final model used was the Resnet18 Model with 
 ## Conclusions
 
-The best model was the Resnet18 model.
+The best model was the Resnet18 model at epoch 8, giving a F1 validation score of 90.4% on kaggle
 
 The model has worked well in classifying COVID-19 pneumonia in CXR images with the following accuracy scores: Normal - 99%, Thorax Disease - 97% and Predicted Label - 98%.
 
-It is also good enough to work well with unseen data, this is supported by the relatively high F1 validation score of our Kaggle submission of 92.3%.
+It is also good enough to work well with unseen data, this is supported by the relatively high F1 validation score of our Kaggle submission of 90.4%.
 
 In conclusion, the model works pretty well as an early detection tool for COVID-19 in a population of only thorax disease, covid pneumonia and no findings.
 
