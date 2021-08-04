@@ -57,7 +57,13 @@ Data Type: JPEG, JPG, PNG
 Final model used was the Resnet18 Model with 
 ## Conclusions
 
-The Resnet18 has performed better on the dataset. 
+The best model was the Resnet18 model.
+
+The model has worked well in classifying COVID-19 pneumonia in CXR images with the following accuracy scores: Normal - 99%, Thorax Disease - 97% and Predicted Label - 98%.
+
+It is also good enough to work well with unseen data, this is supported by the relatively high F1 validation score of our Kaggle submission of 92.3%.
+
+In conclusion, the model works pretty well as an early detection tool for COVID-19 in a population of only thorax disease, covid pneumonia and no findings.
 
 ## Limitations
 
