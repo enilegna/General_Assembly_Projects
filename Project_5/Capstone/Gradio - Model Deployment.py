@@ -21,7 +21,7 @@ resnet18 = torchvision.models.resnet18()
 #change output features from pretrain 1000 to 3 as we only have 3 classes
 resnet18.fc = torch.nn.Linear(in_features=512, out_features=3)
 
-resnet18.load_state_dict(torch.load('./Models/Resnet18-6/resnet18_epoch8.pth'))
+resnet18.load_state_dict(torch.load('/Models/Resnet18-6/resnet18_epoch8.pth'))
 
 
 # In[4]:
@@ -66,7 +66,7 @@ def test(inp):
 inputs = gr.inputs.Image()
 outputs = gr.outputs.Label(num_top_classes=3)
 
-examples=[["./Examples/covid1.png"],["./Examples/normal1.jpg"], ["./Examples/thorax1.jpeg"]]
+examples=[["/Examples/covid1.png"],["/Examples/normal1.jpg"], ["/Examples/thorax1.jpeg"]]
 
 gr.Interface(fn=test, inputs=inputs, outputs=outputs, examples=examples, title="Identifying COVID-19 Pneumonia", 
                   description="Predicts whether COVID-19 Penumonia is present in CXR. This model is EXPERIMENTAL and should only be used for research purposes. Please see a doctor for any diagnostic reasons. Please upload a Chest X-Ray image in JPG, JPEG  or PNG.").launch()
