@@ -26,7 +26,8 @@ resnet18 = torchvision.models.resnet18()
 #change output features from pretrain 1000 to 3 as we only have 3 classes
 resnet18.fc = torch.nn.Linear(in_features=512, out_features=3)
 
-resnet18.load_state_dict(torch.hub.load('enilegna/General_Assembly_Projects/blob/main/Project_5/Capstone/Models/Resnet18-6/resnet18_epoch8.pth'))
+checkpoint = 'https://github.com/enilegna/General_Assembly_Projects/blob/main/Project_5/Capstone/Models/Resnet18-6/resnet18_epoch8.pth'
+resnet18.load_state_dict(torch.torch.hub.load_state_dict_from_url(checkpoint))
 
 
 # In[4]:
