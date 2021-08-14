@@ -27,7 +27,7 @@ resnet18 = torchvision.models.resnet18()
 resnet18.fc = torch.nn.Linear(in_features=512, out_features=3)
 
 checkpoint = 'https://github.com/enilegna/General_Assembly_Projects/blob/main/Project_5/Capstone/Models/Resnet18-6/resnet18_epoch8.pth'
-resnet18.load_state_dict(torch.torch.hub.load_state_dict_from_url(checkpoint))
+resnet18.load_state_dict(torch.hub.load_state_dict_from_url(checkpoint))
 
 
 # In[4]:
