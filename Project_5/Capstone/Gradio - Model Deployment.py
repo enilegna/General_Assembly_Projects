@@ -13,11 +13,6 @@ import pandas as pd
 import os
 from PIL import Image
 
-# Images
-torch.hub.download_url_to_file('https://github.com/enilegna/General_Assembly_Projects/blob/main/Project_5/Capstone/Examples/covid1.png', 'covid1.png')
-torch.hub.download_url_to_file('https://github.com/enilegna/General_Assembly_Projects/blob/main/Project_5/Capstone/Examples/thorax1.jpeg', 'thorax1.jpeg')
-torch.hub.download_url_to_file('https://github.com/enilegna/General_Assembly_Projects/blob/main/Project_5/Capstone/Examples/normal1.jpg', 'normal1.jpg')
-
 
 # In[3]:
 
@@ -71,7 +66,7 @@ def test(inp):
 inputs = gr.inputs.Image()
 outputs = gr.outputs.Label(num_top_classes=3)
 
-examples=[["covid1.png"],["normal1.jpg"], ["thorax1.jpeg"]]
+examples=[["Project_5/Capstone/Examples/covid1.png"],["Project_5/Capstone/Examples/normal1.jpg"], ["Project_5/Capstone/Examples/thorax1.jpeg"]]
 
 gr.Interface(fn=test, inputs=inputs, outputs=outputs, examples=examples, title="Identifying COVID-19 Pneumonia", 
                   description="Predicts whether COVID-19 Penumonia is present in CXR. This model is EXPERIMENTAL and should only be used for research purposes. Please see a doctor for any diagnostic reasons. Please upload a Chest X-Ray image in JPG, JPEG  or PNG.").launch()
