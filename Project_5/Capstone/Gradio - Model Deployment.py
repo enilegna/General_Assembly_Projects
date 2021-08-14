@@ -13,6 +13,11 @@ import pandas as pd
 import os
 from PIL import Image
 
+# Images
+torch.hub.download_url_to_file('https://github.com/enilegna/General_Assembly_Projects/blob/main/Project_5/Capstone/Examples/covid1.png', 'covid1.png')
+torch.hub.download_url_to_file('https://github.com/enilegna/General_Assembly_Projects/blob/main/Project_5/Capstone/Examples/thorax1.jpeg', 'thorax1.jpeg')
+torch.hub.download_url_to_file('https://github.com/enilegna/General_Assembly_Projects/blob/main/Project_5/Capstone/Examples/normal1.jpg', 'normal1.jpg')
+
 
 # In[3]:
 
@@ -21,7 +26,7 @@ resnet18 = torchvision.models.resnet18()
 #change output features from pretrain 1000 to 3 as we only have 3 classes
 resnet18.fc = torch.nn.Linear(in_features=512, out_features=3)
 
-resnet18.load_state_dict(torch.load('./Models/Resnet18-6/resnet18_epoch8.pth'))
+resnet18.load_state_dict(torch.load('enilegna/General_Assembly_Projects/blob/main/Project_5/Capstone/Models/Resnet18-6/resnet18_epoch8.pth'))
 
 
 # In[4]:
@@ -66,7 +71,7 @@ def test(inp):
 inputs = gr.inputs.Image()
 outputs = gr.outputs.Label(num_top_classes=3)
 
-examples=[["./Examples/covid1.png"],["./Examples/normal1.jpg"], ["./Examples/thorax1.jpeg"]]
+examples=[["covid1.png"],["normal1.jpg"], ["thorax1.jpeg"]]
 
 gr.Interface(fn=test, inputs=inputs, outputs=outputs, examples=examples, title="Identifying COVID-19 Pneumonia", 
                   description="Predicts whether COVID-19 Penumonia is present in CXR. This model is EXPERIMENTAL and should only be used for research purposes. Please see a doctor for any diagnostic reasons. Please upload a Chest X-Ray image in JPG, JPEG  or PNG.").launch()
