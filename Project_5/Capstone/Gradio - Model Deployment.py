@@ -67,7 +67,7 @@ inputs = gr.inputs.Image()
 outputs = gr.outputs.Label(num_top_classes=3)
 
 examples=[["Project_5/Capstone/Examples/covid1.png"],["Project_5/Capstone/Examples/normal1.jpg"], ["Project_5/Capstone/Examples/thorax1.jpeg"]]
-article = "<p style='text-align: center'><a href='https://angecha.wixsite.com/home'>This model is built by Angeline Chandraatmadja.</a> | <a href='https://github.com/enilegna/General_Assembly_Projects/blob/main/Project_5/Capstone/COVID-19%20Pneumonia%20CXR%20Detection.md'>Github Repo</a></p>"
+article = "<p style='text-align: center'><a href='https://github.com/enilegna/General_Assembly_Projects/tree/main/Project_5/Capstone'>Read more on Angeline Chandraatmadja Github.</a> | <a href='https://github.com/enilegna/General_Assembly_Projects/tree/main/Project_5/Capstone'>Github Repo</a></p>"
 
 gr.Interface(fn=test, inputs=inputs, outputs=outputs, examples=examples, title="Identifying COVID-19 Pneumonia", article=article,
                   description="Predicts whether COVID-19 Penumonia is present in CXR. This model is EXPERIMENTAL and should only be used for research purposes. Please see a doctor for any diagnostic reasons. Please upload a Chest X-Ray image in JPG, JPEG  or PNG.").launch()
